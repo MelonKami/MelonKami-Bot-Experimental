@@ -4,7 +4,7 @@ This repo is for the Experimental version of my main bot MelonKami, here I will 
 
 ## Important Notes
 
-* For now, there are no important notes
+* Read Important config.json notes beneath
 
 ## Important config.json Notes
 
