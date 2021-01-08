@@ -3,6 +3,9 @@ import discord, datetime
 from discord.ext import commands  #, tasks
 from termcolor import colored
 
+with open ("token.txt") as token_code:
+  token = token_code.read()
+
 print(colored('----STARTING DISCORD BOT----', 'green'))
 startup_time = datetime.datetime.now()
 print(startup_time.strftime("Time: %H:%M:%S"))
@@ -31,4 +34,4 @@ async def ping(ctx):
     print("Command has been registered")
     await ctx.send("Din kommando has blitt registrert!")
 
-bot.run('')
+bot.run(token)
