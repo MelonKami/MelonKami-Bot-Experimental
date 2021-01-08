@@ -1,4 +1,4 @@
-#This is not the original version!
+#This is the experimental version of the bot!
 import discord, datetime, json, os, codecs
 from discord.ext import commands  #, tasks
 from termcolor import colored
