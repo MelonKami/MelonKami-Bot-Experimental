@@ -31,4 +31,4 @@ async def ping(ctx):
     print("Command has been registered")
     await ctx.send("Din kommando has blitt registrert!")
 
-bot.run('NzI0NzkyOTc4MzYyNzI4NDY4.XvFWEA.1yZrszZ6c9W0qjHVopyVr0a560g')
+bot.run('')
