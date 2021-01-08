@@ -4,7 +4,7 @@ This repo is for the Experimental version of my main bot MelonKami, here I will 
 
 ## Important Notes
 
-* If you want to use this bot, please create a token.txt file, and add your token there, nothing else
+* For now, there are no important notes
 
 ## Important config.json Notes
 
