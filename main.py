@@ -9,7 +9,7 @@ print(colored('----STARTING DISCORD BOT----', 'green'))
 startup_time = datetime.datetime.now()
 print(startup_time.strftime("Time: %H:%M:%S"))
 print()
-#---------------------------------------
+#----------------------------------------
 
 config = None
 prefix = "!"
