@@ -15,6 +15,9 @@ config = None
 prefix = "!"
 
 if path.exists('config.json') == False:
+  if path.exists("first_config.json"):
+    os.rename("first_config.json", "config.json")
+  else:
     with open('config.json', 'x') as File:
         json.dump({}, File, indent=4)
 
