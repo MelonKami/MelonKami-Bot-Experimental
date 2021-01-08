@@ -31,7 +31,8 @@ def save_config():
 token = config["token"]
 
 intents = discord.Intents.default()
-bot = commands.Bot(command_prefix=prefix, case_insensitive=True, intents=intents)
+bot = commands.Bot(
+    command_prefix=prefix, case_insensitive=True, intents=intents)
 
 
 @bot.event
