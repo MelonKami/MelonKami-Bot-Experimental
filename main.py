@@ -51,7 +51,6 @@ async def on_ready():
             type=discord.ActivityType.watching,
             name="Jonas, I see what your doing"))
 
-
 @bot.command()
 async def ping(ctx):
     print("Command has been registered")
