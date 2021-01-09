@@ -30,6 +30,7 @@ token = utils.config.token()
 intents = discord.Intents.default()
 bot = commands.Bot(
     command_prefix=prefix, case_insensitive=True, intents=intents)
+bot.remove_command("help")
 
 
 @bot.command()
@@ -108,14 +109,9 @@ async def on_ready():
     print()
     await bot.change_presence(
         activity=discord.Activity(
-            type=discord.ActivityType.watching,
-            name="Author MelonKami#6089"))
+            type=discord.ActivityType.watching, name="Author MelonKami#6089"))
     reload_extensions.start()
 
 
 def run():
     bot.run(token)
-
-
-def stop():
-    bot.stop()

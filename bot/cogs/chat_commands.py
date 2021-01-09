@@ -23,6 +23,7 @@ class ChatCommands(commands.Cog):
     async def ping(self, ctx):
         await ctx.send("Command has been registered")
 
+
     @commands.command()
     async def test(self, ctx):
       await ctx.send("test")

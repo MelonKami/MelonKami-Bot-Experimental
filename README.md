@@ -1,6 +1,6 @@
 # MelonKami Bot Experimental
 
-This repo is for the Experimental version of my main bot MelonKami, here I will experiment on features and ect, which in return could result in an unstable bot.
+This repo is for the Experimental version of my main bot MelonKami ``https://github.com/MelonKami/MelonKamiBot``, here I will experiment on features and ect, which in return could result in an unstable bot.
 
 ## Feel free to use my bot as your own
 
