@@ -14,18 +14,14 @@ print()
 #---------------------------------------
 
 prefix = "!"
-
-if path.exists('config.json') == False:
-  print(colored("Hello, welcome to the bot's setup. To get started with the bot, you need to input your token and prefix", "green"))
-  print()
-  input_token = input("Token: ")
-  input_prefix = input("Prefix: ")
+  
+"""
   with open('config.json', 'x') as File:
       json.dump({"token": input_token, "prefix": input_prefix}, File, indent=4)
 
 with codecs.open('config.json', 'r', encoding='utf-8-sig') as File:
     config = json.load(File)
-
+"""
 def format_filename(name):
     pretty_name = f"{name}"
     return pretty_name.replace('.py', '')
@@ -38,7 +34,7 @@ def space(spaces):
   for x in range(spaces):
     print()
 
-token = config["token"]
+token = utils.config.token()
 
 intents = discord.Intents.default()
 bot = commands.Bot(
@@ -122,3 +118,6 @@ async def on_ready():
 
 def run():
   bot.run(token)
+
+def stop():
+  bot.stop()
