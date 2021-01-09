@@ -25,7 +25,7 @@ def space(spaces):
         print()
 
 
-token = utils.config.token()
+token = utils.config.token
 
 intents = discord.Intents.default()
 bot = commands.Bot(
