@@ -107,7 +107,7 @@ async def on_ready():
         color = "red"
     else:
         color = "green"
-    
+
     print(colored("Start up time:", "green"), colored(time, color))
     space(2)
     print('Logged in as {0.user}'.format(bot))
@@ -117,9 +117,11 @@ async def on_ready():
             type=discord.ActivityType.watching, name="Author MelonKami#6089"))
     reload_extensions.start()
 
+
 @bot.command()
 async def prefix(ctx):
     await ctx.send(utils.config.config["prefix"])
+
 
 def run():
     bot.run(token)
