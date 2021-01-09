@@ -1,9 +1,8 @@
 #This is the experimental version of the bot!
 import discord, datetime, json, codecs
 from discord.ext import commands, tasks
-from bot.utils import config
+from utils import config
 from termcolor import colored
-from bot import utils
 from os import path
 utils.config
 
@@ -19,13 +18,15 @@ extensions_array = ["chat_commands"]
 config = None
 prefix = "!"
 
+
+
 if path.exists('config.json') == False:
   print(colored("Hello, welcome to the bot's setup. To get started with the bot, you need to input your token and prefix", "green"))
   print()
   input_token = input("Token: ")
   input_prefix = input("Prefix: ")
   with open('config.json', 'x') as File:
-      json.dump({}, File, indent=4)
+      json.dump({"token": input_token, "prefix": input_prefix}, File, indent=4)
 
 with codecs.open('config.json', 'r', encoding='utf-8-sig') as File:
     config = json.load(File)
