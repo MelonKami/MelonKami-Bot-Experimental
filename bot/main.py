@@ -1,7 +1,7 @@
 #This is the experimental version of the bot!
 import discord, datetime, json, codecs
 from discord.ext import commands, tasks
-from bot.utils import Config
+from bot.utils import config
 from termcolor import colored
 #from bot import utils
 from os import path

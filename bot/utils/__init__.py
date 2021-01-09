@@ -1,4 +1,4 @@
-from bot.utils.config import config
+from bot.utils.confit import Config
 
 config = Config()
 
