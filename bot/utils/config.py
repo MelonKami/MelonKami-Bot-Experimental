@@ -16,9 +16,7 @@ class Config():
 
         with codecs.open('config.json','r', encoding='utf-8-sig') as File:
             self.config = json.load(File)
-
-    def token(self):
-            return self.config["token"]
+        self.token = self.config["token"]
 
     def hello_world(self):
             print("Hello World")
