@@ -1,6 +1,8 @@
 #Here are all the basic chat commads
 from discord.ext import commands
 
+print("Chat commands loaded")
+
 class ChatCommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot

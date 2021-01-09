@@ -1,5 +1,5 @@
 #This is the experimental version of the bot!
-import discord, datetime, json, codecs
+import discord, datetime, json, codecs, os
 from discord.ext import commands, tasks
 from bot import utils
 from termcolor import colored
@@ -14,7 +14,6 @@ print(startup_time.strftime("Time: %H:%M:%S"))
 print()
 #---------------------------------------
 
-extensions_array = ["chat_commands"]
 
 prefix = "!"
 
@@ -47,7 +46,7 @@ bot = commands.Bot(
 
 @bot.command()
 async def refresh(ctx):
-  for extension in extensions_array:
+  for extension in os.listdir("/bot/cogs"):
     try:
       bot.reload_extension(extension)
     except:
@@ -56,17 +55,17 @@ async def refresh(ctx):
 @bot.command()
 async def extensions(ctx):
   await ctx.send("Extensions: \nchat_commands")
-  for extension in extensions_array:
+  for extension in os.listdir("/bot/cogs"):
     await ctx.send(extension)
 
 @bot.command()
 async def unload_all_extensions(ctx):
-  for extension in extensions_array:
+  for extension in os.listdir("/bot/cogs"):
     bot.unload_extension(extension)
 
 @bot.command()
 async def load_extension(ctx, extension):
-  if extension in extensions_array:
+  if extension in os.listdir("/bot/cogs"):
     try:
       bot.load_extension(extension)
       await ctx.send("Extension has been successfully loaded")
@@ -77,7 +76,7 @@ async def load_extension(ctx, extension):
 
 @bot.command()
 async def unload_extension(ctx, extension):
-  if extension in extensions_array:
+  if extension in os.listdir("/bot/cogs"):
     try:
       bot.unload_extension(extension)
       await ctx.send("Successfully unloaded extension")
@@ -88,7 +87,7 @@ async def unload_extension(ctx, extension):
 
 @tasks.loop(hours=1)
 async def reload_extensions():
-  for extension in extensions_array:
+  for extension in os.listdir("/bot/cogs"):
     try:
       bot.reload_extension(extension)
     except:
