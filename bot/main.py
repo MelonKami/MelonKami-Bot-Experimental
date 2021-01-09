@@ -86,9 +86,9 @@ async def unload_extension(ctx, extension):
             await ctx.send("This extension does not exist")
 
 
-@tasks.loop(hours=1)
+@tasks.loop(hours=3)
 async def reload_extensions():
-    #bot.load_extension("bot.cogs.chat_commands")
+    print("Loading/Reloading cogs")
     for extension in os.listdir("bot/cogs"):
         if extension != "__pycache__":
             try:
@@ -103,7 +103,12 @@ async def on_ready():
     bot_ready_time = datetime.datetime.now()
     print(bot_ready_time.strftime("Time: %H:%M:%S"))
     time = bot_ready_time - startup_time
-    print(colored("Start up time:", "green"), colored(time, "red"))
+    if time > datetime.timedelta(seconds=10):
+        color = "red"
+    else:
+        color = "green"
+    
+    print(colored("Start up time:", "green"), colored(time, color))
     space(2)
     print('Logged in as {0.user}'.format(bot))
     print()
@@ -112,6 +117,9 @@ async def on_ready():
             type=discord.ActivityType.watching, name="Author MelonKami#6089"))
     reload_extensions.start()
 
+@bot.command()
+async def prefix(ctx):
+    await ctx.send(utils.config.config["prefix"])
 
 def run():
     bot.run(token)
