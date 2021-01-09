@@ -1,11 +1,13 @@
 #This is the experimental version of the bot!
 import discord, datetime, json, codecs
 from discord.ext import commands, tasks
-from bot.utils import config
+from bot.utils import Config
 from termcolor import colored
-from bot import utils
+#from bot import utils
 from os import path
-utils.config
+#utils.Config
+
+Config.hello_world()
 
 #This need to stay on top of the code after the imports
 print(colored('----STARTING DISCORD BOT----', 'green'))
