@@ -1,9 +1,5 @@
-from bot.utils.confit import Config
+from bot.utils.config import Config
 
 config = Config()
 
-config.hello_word()
-
-
-
-
+config.hello_world()
