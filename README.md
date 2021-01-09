@@ -19,3 +19,5 @@ If you want to use this bot as your own, simply clone the repo or download it. W
 1. Not generate error.
 
 2. Not overwrite what has been changed: the bot won't recognize a change, and it could potentially overwrite your change if it is running.
+
+* But be careful what you mess with, because you could end up breaking the bot. If this happens, you can simply delete the `config.json`file, and next time you start the bot, it will launch in `first launch`mode. It will then ask for token and prefix again!
