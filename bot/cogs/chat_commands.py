@@ -19,7 +19,6 @@ class ChatCommands(commands.Cog):
       
       await message.delete(delay=5)
 
-
     @commands.command()
     async def ping(self, ctx):
         await ctx.send("Command has been registered")
