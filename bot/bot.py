@@ -111,5 +111,7 @@ async def on_ready():
             name="Just a regular discord bot"))
     reload_extensions.start()
 
+def run(token):
+  bot.run(token)
 
-bot.run(token)
+#bot.run(token)
