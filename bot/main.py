@@ -126,7 +126,7 @@ async def on_ready():
 
     for guild in bot.guilds:
         if str(guild.id) not in utils.config.config["guilds"]:
-            utils.config.config["guilds"][str(guild.id)] = guild_template
+            utils.config.config["guilds"][str(guild.id)] = utils.config.config["guild template"]
     utils.config.save_config()
     reload_extensions.start()
 
