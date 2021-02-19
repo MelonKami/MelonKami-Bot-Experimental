@@ -4,17 +4,17 @@ This repo is for the Experimental version of my main bot MelonKami ``https://git
 
 ## Feel free to use my bot as your own
 
-MelonKami Bot is a plug and play type off bot, simply clone it and all you have to do is download the modules it requires `read https://github.com/MelonKami/MelonKami-Bot-Experimental#packages-youll-need-to-install` , and it'll ask you for the token and prefix, and setup itself. I made this so anyone who wants a bot, can have one, but this is simply the experimental version of my main bot, if you want the main bot, go to `https://github.com/MelonKami/MelonKamiBot` and download that one (At this current time there is nothing there, because the bot does not have a stable version, it will soon). 
+MelonKami Bot is a plug and play type off bot, simply clone it and all you have to do is download the modules it requires ref-[packages you'll need to install](https://github.com/MelonKami/MelonKami-Bot-Experimental#packages-youll-need-to-install), and it'll ask you for the token and prefix, and setup itself. I made this so anyone who wants a bot, can have one, but this is simply the experimental version of my main bot, if you want the main bot, go to `https://github.com/MelonKami/MelonKamiBot` and download that one (At this current time there is nothing there, because the bot does not have a stable version, it will soon). 
 
 If you want to use this bot as your own, simply clone the repo or download it. When you launch it first time it has a setup. It will ask you for a token, and after that it will be working, you can change this later (read configuration notes). Hope you enjoy my bot :D
 
 ## Packages you'll need to install
 
-`It's not guranteed that I will remember to add all the packages you'll need, so please inform me if there is any packages you need, that is not listed here`
+It's not guranteed that I will remember to add all the packages you'll need, so please inform me if there is any packages you need, that is not listed here
 
-* discord.py (`pip install discord.py`)
-
-* termcolor (`pip install termcolor`)
+> discord.py (`pip install discord.py`)
+>
+> termcolor (`pip install termcolor`)
 
 ## Important Notes
 
