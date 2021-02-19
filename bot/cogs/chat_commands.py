@@ -1,11 +1,29 @@
 #Here are all the basic chat commads
 from discord.ext import commands
+from bot import utils
 
 
 class ChatCommands(commands.Cog):
     def __init__(self, bot):
         print("Chat commands Cog loaded")
         self.bot = bot
+
+    @commands.Cog.listener()
+    async def on_message(self, msg):
+        command_found = False
+        for command in utils.config.config["guilds"][str(msg.guild.id)]["commands"]:
+            if command == msg.content:
+                await msg.channel.send(utils.config.config["guilds"][str(msg.guild.id)]["commands"][msg.content])
+                command_found = True
+        if command_found != True:
+            await self.bot.process_commands(msg)
+
+    @commands.command()
+    @commands.has_permissions(manage_messages=True)
+    async def add_command(self, ctx, command_name: str, *, command_desc: str):
+        utils.config.config["guilds"][str(ctx.message.guild.id)]["commands"][command_name] = command_desc
+        utils.config.save_config()
+        await ctx.send(f"Added command {command_name}")
 
     @commands.command()
     @commands.has_permissions(manage_messages=True)

@@ -24,6 +24,12 @@ def space(spaces):
     for x in range(spaces):
         print()
 
+guild_template = {
+        "prefix": "!",
+        "commands": {},
+        "ticket_active": False,
+        "voice_channel_active": False 
+}
 
 token = utils.config.token
 
@@ -115,6 +121,11 @@ async def on_ready():
     await bot.change_presence(
         activity=discord.Activity(
             type=discord.ActivityType.watching, name="Author MelonKami#6089"))
+
+    for guild in bot.guilds:
+        if str(guild.id) not in utils.config.config["guilds"]:
+            utils.config.config["guilds"][str(guild.id)] = guild_template
+    utils.config.save_config()
     reload_extensions.start()
 
 
