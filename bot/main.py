@@ -14,6 +14,8 @@ print()
 
 prefix = "!"
 
+def prefix(bot, message):
+    return(utils.config.config['guilds'][str(message.guild.id)]['prefix'])
 
 def format_filename(name):
     pretty_name = f"{name}"

@@ -2,7 +2,6 @@
 from discord.ext import commands
 from bot import utils
 
-
 class ChatCommands(commands.Cog):
     def __init__(self, bot):
         print("Chat commands Cog loaded")
