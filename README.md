@@ -8,9 +8,9 @@ MelonKami Bot is a plug and play type off bot, simply clone it and all you have 
 
 If you want to use this bot as your own, simply clone the repo or download it. When you launch it first time it has a setup. It will ask you for a token, and after that it will be working, you can change this later (read configuration notes). Hope you enjoy my bot :D
 
-## Packages you'll need to install
+## Packages the bot uses
 
-It's not guranteed that I will remember to add all the packages you'll need, so please inform me if there is any packages you need, that is not listed here
+To install the packages, simply do `pip install .`, and if this for some reason won't work, here is the packages, and the pip installments
 
 > discord.py (`pip install discord.py`)
 >
