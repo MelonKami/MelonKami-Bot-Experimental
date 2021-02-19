@@ -26,12 +26,13 @@ def space(spaces):
     for x in range(spaces):
         print()
 
-guild_template = {
-        "prefix": "!",
-        "commands": {},
-        "ticket_active": False,
-        "voice_channel_active": False 
-}
+# guild_template = {
+#         "prefix": "!",
+#         "commands": {},
+#         "ticket_active": False,
+#         "voice_channel_active": False,
+#         "music": {}
+# }
 
 token = utils.config.token
 
@@ -125,15 +126,22 @@ async def on_ready():
             type=discord.ActivityType.watching, name="Author MelonKami#6089"))
 
     for guild in bot.guilds:
+        guild_entries = utils.config.config["guilds"][str(guild.id)].keys()
+        guild_template_entries = utils.config.config["guild template"].keys()
         if str(guild.id) not in utils.config.config["guilds"]:
             utils.config.config["guilds"][str(guild.id)] = utils.config.config["guild template"]
+        else:
+            for entry in guild_template_entries:
+                if entry not in guild_entries:
+                    utils.config.config["guilds"][str(guild.id)][entry] = utils.config.config["guild template"][entry]
+
     utils.config.save_config()
     reload_extensions.start()
 
 
 @bot.command()
 async def prefix(ctx):
-    await ctx.send(utils.config.config["prefix"])
+    await ctx.send(utils.config.config["guilds"][str(ctx.message.guild.id)]["prefix"])
 
 
 def run():

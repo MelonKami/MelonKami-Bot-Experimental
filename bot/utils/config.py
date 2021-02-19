@@ -16,7 +16,8 @@ class Config():
                     "prefix": str(input_prefix),
                     "commands": {},
                     "ticket_active": False,
-                    "voice_channel_active": False 
+                    "voice_channel_active": False,
+                    "music": {}
             }
 
             with open('config.json', 'x') as File:
