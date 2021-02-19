@@ -26,14 +26,6 @@ def space(spaces):
     for x in range(spaces):
         print()
 
-# guild_template = {
-#         "prefix": "!",
-#         "commands": {},
-#         "ticket_active": False,
-#         "voice_channel_active": False,
-#         "music": {}
-# }
-
 token = utils.config.token
 
 intents = discord.Intents.default()
