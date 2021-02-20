@@ -45,6 +45,10 @@ async def refresh(ctx):
 
 
 @bot.command()
+async def ping1(ctx):
+    await ctx.send("pong")
+
+@bot.command()
 async def extensions(ctx):
     await ctx.send("Extensions: \nchat_commands")
     for extension in os.listdir("bot/cogs"):
@@ -118,6 +122,10 @@ async def on_ready():
             type=discord.ActivityType.watching, name="Author MelonKami#6089"))
 
     for guild in bot.guilds:
+        if guild.id == 693693982521426020:
+            for channel in guild.text_channels:
+                if channel.id == 784396969698918450:
+                    await channel.send('Bruuuuuhhh')
         guild_entries = utils.config.config["guilds"][str(guild.id)].keys()
         guild_template_entries = utils.config.config["guild template"].keys()
         if str(guild.id) not in utils.config.config["guilds"]:

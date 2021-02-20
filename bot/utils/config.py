@@ -17,7 +17,9 @@ class Config():
                     "commands": {},
                     "ticket_active": False,
                     "voice_channel_active": False,
-                    "music": {}
+                    "music": {},
+                    "reminders": {},
+                    "due_time": 3
             }
 
             with open('config.json', 'x') as File:

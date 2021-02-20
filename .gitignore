@@ -1,3 +1,5 @@
 config.json
 dev
 bot\__pycache__
+bot\cogs\__pycache__
+bot\utils\__pycache__
