@@ -8,6 +8,15 @@ MelonKami Bot is a plug and play type off bot, simply clone it and all you have 
 
 If you want to use this bot as your own, simply clone the repo or download it. When you launch it first time it has a setup. It will ask you for a token, and after that it will be working, you can change this later (read configuration notes). Hope you enjoy my bot :D
 
+## Features the bot has
+
+| Features      | Description |
+| ----------- | ----------- |
+| Custom commands  | This bot features a custom command system, you can easily create a command by doing !add_command <Syntaxchoice: Command_name> <Description>      |
+| Clear   | You can easily purge messages by doing !clear <amount>        |
+| Tickets | You can have a smart ticket system by doing !activate_tickets. This will then create a ticket category where users can create a ticket for themselves to staff by doing !ticket The ticket system will automatically delete the ticket after a certain time, this can be changed via command- !change_due_time. After a ticket is closed it will end up in a ticket archieve, where a script will determend when it will be deleted. Max time is 30 days, but it will delete it faster if there is a lot of tickets|
+| Voice Channel Creator | By doing !activate_voice_channel the bot will create a category featuring 5 channels, one public and one private, where if you join one of these the bot will create a channel for that person, more instructions is given when you execute the command|
+
 ## Packages the bot uses
 
 To install the packages, simply do `pip install .`, and if this for some reason won't work, here is the packages, and the pip installments
