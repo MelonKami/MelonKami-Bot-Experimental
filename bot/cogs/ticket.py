@@ -5,7 +5,7 @@ from bot import utils
 
 def create_embed(title, description: str=None, url: str=None):
     embed = discord.Embed(title=title, description=description)
-    embed.set_footer(text='Ticket - ColosseumRP Bot')
+    embed.set_footer(text='Ticket - MelonKami Bot')
     embed.url = url
     embed.timestamp = datetime.datetime.now()
     return embed
@@ -24,7 +24,7 @@ class Ticket(commands.Cog):
         
         support_message = (f'Hello {ctx.message.author.mention}, welcome to Support! ' +
         f'This ticket is now set to archieve in {utils.config.config["guilds"][str(ctx.message.guild.id)]["due_time"]} days after the last message has been sent, keep in mind that this duetime can change anytime, without you being notified. ' +
-        'After it has been archieved it will be stored for up to 30 days before it gets deleted by the bot. \n\nPlease explain your issue to staff, so they can help you as soon as possible.')
+        'After it has been archieved it will be stored for up to 30 days before it gets deleted by the bot. \n\n```Please explain your issue to staff, so they can help you as soon as possible.```')
 
         for channel in ticket_category.text_channels:
             if channel.name == f'ticket-{ctx.message.author.id}':
@@ -52,9 +52,9 @@ class Ticket(commands.Cog):
             config_message = await kanal.send(embed=create_embed(f'Hello {ctx.message.author.display_name}, welcome to support', support_message))
             message = await ctx.send(f'Your ticket was created  {ctx.message.author.mention}!')
             await message.delete(delay=30)
-            issue = self.bot.wait_for('message', check=check)
+            issue = await self.bot.wait_for('message', check=check)
             await config_message.delete()
-            #await issue.delete()
+            await issue.delete()
             await kanal.send(embed=create_embed(ctx.message.author.display_name, f'Issue to be resolved: \n{issue.content}'))
 
 
