@@ -16,9 +16,6 @@ class ChatCommands(commands.Cog):
             if command == msg.content:
                 await msg.channel.send(utils.config.config["guilds"][str(
                     msg.guild.id)]["commands"][msg.content])
-                command_found = True
-        if command_found != True:
-            await self.bot.process_commands(msg)
 
     @commands.command()
     @commands.has_permissions(manage_messages=True)
